@@ -1,0 +1,12 @@
+INSERT INTO 'evt_eventos' VALUES (
+(1,'Goku','Carrillo','Carrillo','M',25,'ChessRocha@hotmail.com','10030058','PuchyPu'),
+(2,'Miguel','Alcala','Hernandez','M',20,'Miguel_Al@hotmail.com','10042112','Alc4521'),
+(3,'Elizabeth','Ramirez','Paredes','F',19,'ElizabethRamirez@hotmail.com','10060578','Eli12Ds'),
+(4,'Carmen','Prada','Rios','F',21,'Carmen_Rios003@hotmail.com','10254784','41CaR45'),
+(5,'Jesus','Baylon','Bedoya','M',23,'JesusCr@hotmail.com','10012457','Jes4D12'),
+(6,'Marina','Castillo','Benavides','F',19,'MarBenavides@hotmail.com','10047895','Cas14725'),
+(7,'Javier','Bedregal','Torres','M',20,'Bedregal@hotmail.com','10054875','Be45eE4'),
+(8,'Alberto','Benavides','Solis','M',23,'AlbertBen@hotmail.com','10201457','47Xed8x'),
+(9,'Flor','Baylon','Villegas','F',21,'FlorBaylon@hotmail.com','10020524','Fl12Ex7'),
+(10,'Corina','Lozano','Cortez','F',20,'CorinaLozano@hotmail.com','10010478','Cor45Gz')
+);

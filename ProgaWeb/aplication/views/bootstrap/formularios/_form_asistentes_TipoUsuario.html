@@ -1,0 +1,71 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario Asistentes</title>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/Clases.css">
+    </head>
+    <body class="fondo">
+
+        <div class="navbar" >
+            <div class="navbar-inner">
+                <div class="container">
+                    <span class="brand">Eventos ITC</span>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="divider-vertical"><a href="#">Usuario</a></li>
+                            <li class="divider-vertical"><a href="#">Evento</a></li>
+                            <li class="divider-vertical"><a href="#">Actividad</a></li>
+                            <li class="divider-vertical"><a href="#">Tipo Usuario</a></li>
+                            <li class="divider-vertical"><a href="#">Eventos Tipo Usuario</a></li>
+                            <li class="divider-vertical"><a href="#">Asistentes Tipos Usuarios</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <form class="form-signin" style="background-color:  skyblue">
+                <h3 class="form-signin-heading">Asistentes Tipo Usuarios</h3>
+                <br>
+                <h4 class="form-signin-heading"> ID TipoAsistente: <h4/>
+                <SELECT NAME="eve" SIZE="1">
+                    <OPTION VALUE="1">AsistenteTipoUno</OPTION>
+                    <OPTION VALUE="2">AsistenteTipoDos</OPTION>
+                    <OPTION VALUE="3">AsistenteTipoTres</OPTION>
+                </SELECT>
+                
+                <br>
+                <h4 class="form-signin-heading"> ID Asistente: <h4/>
+                <SELECT NAME="eve" SIZE="1">
+                    <OPTION VALUE="1">AsistenteUno</OPTION>
+                    <OPTION VALUE="2">AsistenteDos</OPTION>
+                    <OPTION VALUE="3">AsistenteTres</OPTION>
+                </SELECT>
+                <br>
+            				
+                <h4 class="form-signin-heading"> ID TipoUsuario: <h4/>
+                <SELECT NAME="eve" SIZE="1">
+                    <OPTION VALUE="1">TipoUsuarioUno</OPTION>
+                    <OPTION VALUE="2">TipoUsuarioDos</OPTION>
+                    <OPTION VALUE="3">TipoUsuarioTres</OPTION>
+                </SELECT>
+                <br>
+              
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="rutaretorno.html">  <button type="button" class="btn btn-danger">Regresar </button> </a>
+            </form>
+
+        </div> <!-- /container -->
+
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>

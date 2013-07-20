@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="views/bootstrap/css/bootstrap.css" rel="stylesheet"> 
+        <script src="views/bootstrap/js/jquery.js"></script>
+        <script src="views/bootstrap/js/bootstrap.js"></script>
+       
+    </head>
+    <body background="views/bootstrap/img/10753.jpg">
+        
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <img src="views/bootstrap/img/top_bg1-8.jpg">
+                </div>
+                <div class="span12"><br></div>
+                <div class="span9">
+
+                    <div id="myCarousel" class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="views/bootstrap/img/lince.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h4>Lince</h4>
+                                    <p>HOla Mundo</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="views/bootstrap/img/top_bg1-8.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h4>Second Thumbnail label</h4>
+                                    <p>Hola Mundo</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="views/bootstrap/img/10753.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h4>Third Thumbnail label</h4>
+                                    <p>Hola Mundo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+                    </div>
+
+                </div>
+                <div class="span3">
+                    <form>
+                        <fieldset>
+                            <legend>Usuarios</legend>
+                            <label for="numero_control">N&uacute;mero de Control</label>
+                            <input type="text" placeholder="N&uacute;mero" id="numero_control">
+                            <label for="contraseña">Contrase&ntilde;a</label>
+                            <input type="password" placeholder="*****" id="contraseña">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-success"><a href="#">Registrate!!</a></button>
+                        </fieldset>
+                    </form>                    
+                </div><!--Sapn3-->
+            </div>
+        </div>        
+        <script>
+            $(document).ready(function() {
+                $('.carousel').carousel({
+                    interval: 3000
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<?php include_once('adodb5/adodb.inc.php');
+class conexion{
+////    private $db='mysql',$servidor='localhost',$user='root',$pass='****',$base='prueba_adobd'------------------------
+//
+public function conectar(){
+    
+}
+}
+?>
+
+
+<!--function insertar(){
+    $con=new conexion();
+    $db=$con->conectar();
+    $id=$this->getId();
+    $nom=$this->getNombre();
+    $user=$this->getUsername();
+    $direccion=$this->getDic();
+    $telefono=$this->getTel();
+    $pass=$this->getpass();
+    $sql='consulta';
+    $rs=$db->Execute($sql);
+return $rs;-->
+}

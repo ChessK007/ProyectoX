@@ -2,11 +2,8 @@
 include('../../views/layouts/header.php');
 include('../../models/ManejoBaseDatos.php');
 include('../../libs/adodb5/adodb.inc.php');
-?>
 
 
- 
-<?php
     Class Aceptacion extends ManejoBaseDatos {
         
         public function Aceptacion() {

@@ -8,8 +8,8 @@
             </a>
 
             <a class="brand" href="_form_asistente.php"><small>altas</small></a>
-            <a class="brand" href="_form_actividades.php"><small>bajas</small></a>
-            <a class="brand" href="_form_tipos_usuarios.php"><small>actualizacion</small></a>
+            <a class="brand" href="_form_baja.php"><small>bajas</small></a>
+            <a class="brand" href="_form_actualiza.php"><small>actualizacion</small></a>
             <a class="brand" href="_form_reset_password.php"><small>reset</small></a>
                         
         </div>

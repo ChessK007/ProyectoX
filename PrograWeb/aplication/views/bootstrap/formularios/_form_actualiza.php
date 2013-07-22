@@ -6,8 +6,8 @@ include('../../layouts/navegador.php');
 
 <div class="container">   
     <form action="" method="post" class="well">
-        <h3 class="form-signin-heading" >ACTUALIZA</h3>
-        <br>
+        <h1>Actualizaci&oacute;n</h1>
+        
         <label for="id_asistente">id asistente</label>
         <input id="id_asistente" type="text" class="span3" placeholder="ID" required="required"><br><br>      
         <label for="nombre_asistente">Nombre</label>

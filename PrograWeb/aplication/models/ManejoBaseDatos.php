@@ -1,6 +1,7 @@
 <?php
 
 include ('../libs/adodb5/adodb.inc.php');
+include ('Validacion.php');
 ?>
 
 <?php
@@ -11,6 +12,7 @@ class ManejoBaseDatos {
     
     
     function ManejoBaseDatos() {
+        parent::Validacion();
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
         $this->db->Connect('localhost', 'root', '', 'ProyectoX');
@@ -37,7 +39,12 @@ class ManejoBaseDatos {
             }
             else{echo "Guardado con exito";}
         mysqli_close($enlace);
-    }   
+    }
+    
+    public function inserta($rs){
+        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla,$rs);
+        return $this->get_error($this->db->Execute($sql_insert),'Error en Modelo.inserta');
+    }
     
     public function resetear_password($id) {
         if (is_integer($id)) {

@@ -22,4 +22,4 @@ include('../../models/ManejoBaseDatos.php');
        } 
     }
  ?>   
-<button type="button" id="siguient" class="btn btn-danger"><a href="../../views/bootstrap/formularios/_form_reset_password.php"></a>Salir</button>
+<a href="../../views/bootstrap/formularios/_form_reset_password.php"><button type="button" id="siguient" class="btn btn-danger">Salir</button></a>

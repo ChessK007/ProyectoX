@@ -1,15 +1,12 @@
 <?php
-include ('../libs/adodb5/adodb.inc.php');
-?>
 
-<?php
-
-class ManejoBaseDatos {
+class ManejoBaseDatos extends Validacion {
     
     private $db;
     
     
     function ManejoBaseDatos() {
+        parent::Validacion();
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
         $this->db->Connect('localhost', 'root', 'len21se13', 'ProyectoX');
@@ -18,27 +15,14 @@ class ManejoBaseDatos {
         }else{
             echo $db;
         }
-        
-        $id_asistentes = $_POST["id_asistentes"];
-        $nombre_asistente = $_POST["nombre_asistente"];
-        $apellido_paterno = $_POST["apellido_paterno"];
-        $apellido_materno = $_POST["apellido_materno"];
-        $genero = $_POST["genero"];
-        $edad = $_POST["edad"];
-        $email = $_POST["email"];
-        $nctrl_rfc = $_POST["nctrl_rfc"];
-        $password = $_POST["password"];
-        
-        $actual = mysqli_query($enlace,"call actualiza('$nombre_asistente','$apellido_paterno',
-                                                        '$apellido_materno','$genero','$edad',
-                                                        ,'$email','$nctrl_rfc')");
-        if (!$actual){
-            echo "Error al guardar";
-            }
-            else{echo "Guardado con exito";}
-        mysqli_close($enlace);
-        
+               
     }   
+    
+     public function inserta($array) {
+        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla, $array);
+        $this->get_error($this->db->Execute($sql_insert));
+        return true;
+    }
     
     public function resetear_password($email) {
         if(isset($_POST["email"]))
@@ -56,14 +40,33 @@ class ManejoBaseDatos {
     }  
   }//resetear
   
-   public function get_error($result,$tipo_error){
-               if($result === false){
-                   
-                   return false;//No se hizo nada
-               }else{
-                   return TRUE;
-               }   
-             }
+   public function get_error($result) {
+        if ($result === false) {
+            header ('Location: registroFallido.php');
+        }
+    }
+    
+    public function actualiza($id) {
+        if (is_integer($id)) {
+            $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
+            $record = $this->db->Execute($sql);  
+            
+            $actual = mysqli_query($enlace,"call actualiza($id,$nombre_asistente','$apellido_paterno',
+                                                        '$apellido_materno','$genero','$edad',
+                                                        ,'$email','$nctrl_rfc')");
+        if (!$actual){
+            echo "Error al guardar";
+            }
+            else{echo "Guardado con exito";}
+                    mysqli_close($enlace);
+           /* $rs = array();*/
+           /* $rs['nombre'] = 'Pedro';*/
+            /*$sql_update = $this->db->GetUpdateSQL($record, $rs);*/
+            /*$this->db->Execute($sql_update);*/
+        } else {
+            die('OJO CON TU ID');
+        }
+    }
            
     
     public function resibe($id) {

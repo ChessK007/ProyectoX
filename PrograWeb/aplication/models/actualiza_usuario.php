@@ -25,7 +25,7 @@ class actualiza_usuario extends ManejoBaseDatos {
 
     /* Constructor */
 
-    public function actuliza_usuario() {
+    public function actualiza_usuario() {
         parent::ManejoBaseDatos();
     }
 

@@ -25,6 +25,7 @@
 				<label for="nctrl_rfc">No. Control</label>
                 <input id="nctrl_rfc" type="text" class="span3" placeholder="N.Control" required="required">
 				<br><br>
+                <input type="submit" name="resetear_Passsword" value ="Resetear password" action="ManejoBaseDatos.php">                
                 <button type="submit" class="btn btn-primary">Aceptar</button>
                 <a href="_form_index.html">  <button type="button" class="btn btn-danger">Regresar </button> </a>
             </form>

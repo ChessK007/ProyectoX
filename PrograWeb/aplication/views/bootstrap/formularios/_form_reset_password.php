@@ -5,14 +5,8 @@ include('../../layouts/navegador.php');
 ?>
 <div class="container">
     <div class="row">
-        <center><h1>Reseteo de Password</h1></center>
-        <center><div class="span5">
-                <form class="well" action="../../../controllers/siteController/Aceptacion.php" method="get">
-
-
-            <form class="well" action="#" method="get">
+            <form class="well" action="../../../controllers/siteController/Aceptacion.php" method="get">
                 <h1>Reseteo de Password</h1>
-
                 <input type="email" class="input-medium" name="email" placeholder="email" required="required">
                 <input type="submit" class="btn btn-primary" value="Buscar">                
             </form>
@@ -20,9 +14,8 @@ include('../../layouts/navegador.php');
 </div><!--container-->
 
 
-    <?php
-    include('../../layouts/footer.php');
-    
-    ?>
+<?php
+include('../../layouts/footer.php');
+?>
 
 

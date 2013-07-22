@@ -12,7 +12,7 @@ class ManejoBaseDatos {
     function ManejoBaseDatos() {
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
-        $this->db->Connect('localhost', 'root', 'len21se13', 'ProyectoX');
+        $this->db->Connect('localhost', 'root', '', 'EventosITC');
         if(db){
             echo 'Chido';
         }else{

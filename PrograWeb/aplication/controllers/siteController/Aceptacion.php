@@ -1,6 +1,7 @@
 <?php
 include('../../views/layouts/header.php');
 include('../../models/ManejoBaseDatos.php');
+include('../../libs/adodb5/adodb.inc.php');
 ?>
 
 
@@ -14,12 +15,10 @@ include('../../models/ManejoBaseDatos.php');
         $m->resetear_password($_POST['email']);
         $res=$this->db -> Execute($sql_update);
         if($res){
-            echo "<html>
-                    <h4>El Reseteo se logro exitosamente</h4>
-                    </html>";
+            echo "<h1>El Reseteo se logro exitosamente</h1>";
             }
         }
        } 
     }
  ?>   
-<button type="button" id="siguient" class="btn btn-danger"><a href="../../views/bootstrap/formularios/_form_reset_password.php"></a>Salir</button>
+<a href="../../views/bootstrap/formularios/_form_reset_password.php"><button type="button" id="siguient" class="btn btn-danger">Salir</button></a>

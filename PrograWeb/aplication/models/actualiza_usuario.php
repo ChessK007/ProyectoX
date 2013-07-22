@@ -1,6 +1,6 @@
 <?php
 
-class actualiza_usuario extends Modelo {
+class actualiza_usuario extends ManejoBaseDatos {
     /* Variables Globales Privadas */
 
     private $id_asistente;
@@ -26,7 +26,7 @@ class actualiza_usuario extends Modelo {
     /* Constructor */
 
     public function actuliza_usuario() {
-        parent::Modelo('actuliza_usuario');
+        parent::ManejoBaseDatos();
     }
 
     /* Obtener Valores */
@@ -40,7 +40,8 @@ class actualiza_usuario extends Modelo {
     }
 
     public function get_id_asistente() {
-        return $this->id_persona;
+        return $this->id_asistente;
+        
     }
 
     public function get_nombre() {

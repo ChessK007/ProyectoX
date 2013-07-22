@@ -39,6 +39,32 @@ class ManejoBaseDatos {
         mysqli_close($enlace);
     }   
     
+    public function resetear_password($id) {
+        if (is_integer($id)) {
+            $sql = "select password from " . $this->nombre_tabla . "where id = " . $id;
+            $record = $this->db->Execute($sql);
+            $rs = array();
+            $rs['password'] = '1111';
+            $sql_update = $this->db->GetUpdateSQL($record, $rs);
+            $this->db->Execute($sql_update);
+        } else {
+            die('Verifica el ID');
+        }
+    }
+    
+    public function resibe($id) {
+        if (is_integer($id)) {
+            $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
+            $record = $this->db->Execute($sql);
+            $rs = array();
+            $rs['password'] = '1111';
+            $sql_update = $this->db->GetUpdateSQL($record, $rs);
+            $this->db->Execute($sql_update);
+        } else {
+            die('Verifica el ID');
+        }
+    }
+    
 
 }
 ?>

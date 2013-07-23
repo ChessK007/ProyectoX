@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
 <?php
 
 class ManejoBaseDatos {
@@ -12,7 +9,6 @@ class ManejoBaseDatos {
         
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
-<<<<<<< HEAD
         $this->db->Connect('localhost','root','len21se13','eventositc');
         }
     
@@ -36,47 +32,7 @@ class ManejoBaseDatos {
             return true;
         }
     }
-    /* public function inserta($array) {
-        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla, $array);
-        $this->get_error($this->db->Execute($sql_insert));
-        return true;
-    }*/
-    
-=======
-        $this->db->Connect('localhost', 'root', '', 'EventosITC');
-        if (db) {
-            echo 'Chido';
-        } else {
-            echo $db;
-        }
-
-        $id_asistentes = $_POST["id_asistentes"];
-        $nombre_asistente = $_POST["nombre_asistente"];
-        $apellido_paterno = $_POST["apellido_paterno"];
-        $apellido_materno = $_POST["apellido_materno"];
-        $genero = $_POST["genero"];
-        $edad = $_POST["edad"];
-        $email = $_POST["email"];
-        $nctrl_rfc = $_POST["nctrl_rfc"];
-        $password = $_POST["password"];
-
-        $actual = mysqli_query($enlace, "call actualiza('$nombre_asistente','$apellido_paterno',
-                                                        '$apellido_materno','$genero','$edad',
-                                                        ,'$email','$nctrl_rfc')");
-        if (!$actual) {
-            echo "Error al guardar";
-        } else {
-            echo "Guardado con exito";
-        }
-        mysqli_close($enlace);
-    }
-
-    public function inserta($rs) {
-        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla, $rs);
-        return $this->get_error($this->db->Execute($sql_insert), 'Error en Modelo.inserta');
-    }
-
->>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
+       
     public function resetear_password($email) {
         if (isset($_POST["email"])) {
             if (is_integer($email)) {
@@ -92,52 +48,14 @@ class ManejoBaseDatos {
     }
 
 //resetear
-
-    public function get_error($result, $tipo_error) {
-        if ($result === false) {
-
-            return false; //No se hizo nada
-        } else {
-            return TRUE;
-        }
-<<<<<<< HEAD
-    }  
-  }//resetear
- 
     
     public function actualiza($nombre_asistente,$apellido_paterno,
                                                         $apellido_materno,$genero,$edad,
                                                         $email,$nctrlrfc) {
-        
-        /*if (is_integer($id)) {
-            $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
-            $record = $this->db->Execute($sql);  
-            $id = $this->get_id_asistente();
-            /*$nombre_asistente= $this->get_nombre();
-            $apellido_paterno= $this->get_apellido_pat();
-            $apellido_materno =  $this->get_id_apellido_mat();
-            $genero = $this->get_genero();
-            $edad = $this->get_edad();
-            $email= $this->get_email();
-            $nctrl_rfc= $this->get_nctrl_rfc();*/
-        /*    $actual = mysqli_query($enlace,"call actualiza($id,$nombre_asistente','$apellido_paterno',
-                                                        '$apellido_materno','$genero','$edad',
-                                                        ,'$email','$nctrl_rfc')");
-        if (!$actual){
-            echo "Error al guardar";
-            }
-            else{echo "Guardado con exito";}
-                    mysqli_close($enlace);
-           /* $rs = array();*/
-           /* $rs['nombre'] = 'Pedro';*/
-            /*$sql_update = $this->db->GetUpdateSQL($record, $rs);*/
-            /*$this->db->Execute($sql_update);*/
-       /* } else {
-            die('OJO CON TU ID');
-        }*/
-        if(is_integer($email)){
-            $sql = "SELECT * FROM  ".$this->nombre_tabla." 
-                WHERE email = ".$email; 
+        $id = "SELECT nctrl_rfc FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc;
+        $record = $this->db->Execute($id);
+        if(strcmp($id, $nctrlrfc)){
+            $sql = "SELECT * FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc; 
             
             $record = $this->db->Execute($sql);
             $rs = array();
@@ -155,24 +73,6 @@ class ManejoBaseDatos {
         }
     }
            
-    
-=======
     }
-
->>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
-    public function resibe($id) {
-        if (is_integer($id)) {
-            $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
-            $record = $this->db->Execute($sql);
-            $rs = array();
-            $rs['password'] = '1111';
-            $sql_update = $this->db->GetUpdateSQL($record, $rs);
-            $this->db->Execute($sql_update);
-        } else {
-            die('Verifica el ID');
-        }
-    }
-
-}
 ?>
 

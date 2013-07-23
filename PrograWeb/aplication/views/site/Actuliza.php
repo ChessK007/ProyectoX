@@ -1,22 +1,22 @@
 <?php
-    include ('../../../models/ManejoBaseDatos.php');
-    include ('../../../models/actualiza_usuario.php');
-    include ('../../../libs/adodb5/adodb-pager.inc.php');
-    include ('../../../libs/adodb5/adodb.inc.php');
-    include ('../../../controllers/siteController/UsuarioController.php');
+    include ('../../models/ManejoBaseDatos.php');
+    include ('../../models/actualiza_usuario.php');
+    include ('../../libs/adodb5/adodb-pager.inc.php');
+    include ('../../libs/adodb5/adodb.inc.php');
+    include ('../../controllers/siteController/UsuarioController.php');
 
     $usuario = new UsuarioController();
     if(isset($_POST['nctrl_rfc'])){
         
         if($usuario->registrausuario($_POST['nctrl_rfc'])){
-            echo 'Registro Aceptado';
+            header("Location: registroCorrecto.php");
         }
     }
 ?>
 
 <?php
-include ('../../layouts/header.php');
-include('../../layouts/navegador.php');
+include ('../layouts/header.php');
+include('../layouts/navegador.php');
 ?>
 
 <div class="container">   
@@ -48,5 +48,5 @@ include('../../layouts/navegador.php');
         </div> 
 
 <?php
-include ('../../layouts/footer.php');
+include ('../layouts/footer.php');
 ?>

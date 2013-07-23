@@ -14,7 +14,7 @@ class actualiza_usuario extends ManejoBaseDatos {
         'password' => array()
     );
 
-    private $nombre;
+    private $nombre_asistente;
     private $apellido_pat;
     private $apellido_mat;
     private $genero;
@@ -41,8 +41,8 @@ class actualiza_usuario extends ManejoBaseDatos {
     }
 
 
-    public function get_nombre() {
-        return $this->nombre;
+    public function get_nombre_asistente() {
+        return $this->nombre_asistente;
     }
 
     public function get_apellido_pat() {
@@ -66,101 +66,15 @@ class actualiza_usuario extends ManejoBaseDatos {
     }
     
     public function get_nctrl_rfc() {
-        return $this->genero;
+        return $this->nctrl_rfc;
     }
 
     public function get_pass() {
         return $this->pass;
     }
-
-    /* Asignar Valores */
-
-   /* public function set_id_asistente($valor) {
-        $this->id_persona = $valor;
-    }
-
-    public function set_nombre($valor) {
-        $resp = $this->valida("nombre", $valor);    
-        if ($resp) {
-            $this->nombre = $valor;
-        } else {
-            echo "$valor esta mal en el campo NOMBRE <br>";
-        }
-        return resp;
-    }
-
-    public function set_apellido_pat($valor) {
-        $resp = $this->valida("nombre", $valor);
-        if ($resp) {
-            $this->apellido_mat = $valor;
-        } else {
-            echo "$valor esta mal en el campo APELLIDO PAT <br>";
-        }
-        return resp;
-    }
-
-    public function set_apellido_mat($valor) {
-        $resp = $this->valida("nombre", $valor);
-        if ($resp) {
-            $this->apellido_pat = $valor;
-        } else {
-             echo "$valor esta mal en el campo APELLIDO MAT <br>";
-        }
-        return resp;
-    }
-
-    public function set_email($valor) {
-        $resp = $this->valida("email", $valor);
-        if ($resp) {
-            $this->email = $valor;
-        } else {
-             echo "$valor esta mal en el campo EMAIL <br>";
-        }
-        return resp;
-    }
-
-    public function set_genero($valor) {
-        $resp = $this->valida("genero", $valor);
-        if ($resp) {
-            $this->genero = $valor;
-        } else {
-             echo "$valor esta mal en el campo GENERO <br>";
-        }
-        return resp;
-    }
-
-    public function set_edad($valor) {
-        $resp = $this->valida("edad", $valor);
-        if ($resp) {
-            $this->edad = $valor;
-        } else {
-             echo "$valor esta mal en el campo EDAD <br>";
-        }
-        return resp;
-    }
     
-    public function set_nctrl_rfc($valor) {
-        $resp = $this->valida("entero", $valor);
-        if ($resp) {
-            $this->nctrl_rfc = $valor;
-        } else {
-             echo "$valor esta mal en el campo EDAD <br>";
-        }
-        return resp;
-    }
-
-    public function set_pass($valor) {
-        $resp = $this->valida("pass", $valor);
-        if ($resp) {
-            $this->pass = $valor;
-        } else {
-             echo "$valor esta mal en el campo  PASS <br>";
-        }
-        return resp;
-    }*/
-    
-    public function set_nombre($valor){
-        $this->nombre = $valor;
+    public function set_nombre_asistente($valor){
+        $this->nombre_asistente = $valor;
     }
     
     public function set_apellido_pat($valor){

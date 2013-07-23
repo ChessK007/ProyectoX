@@ -7,7 +7,7 @@ class Validacion {
     public function Validacion() {
         $this->expresion = array(
             'nombre' => "/^[a-zA-Z\s]+$/",
-            'pass' => "/^([a-z]+[A-Z]+\d+\W+)([a-z]+[A-Z]+\d+\W+)$/", //sigue estando mal
+            'pass' => "/^([a-z]+[A-Z]+\d+\W+)([a-z]+[A-Z]+\d+\W+)$/", 
             'entero' => "/^[0-9]+$/",
             'decimal' => "/^[0-9]*\.[0-9]+$/",
             'genero' => "/^[M|F]{1}$/",

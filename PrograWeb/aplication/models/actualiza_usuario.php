@@ -1,10 +1,20 @@
 <?php
 
-class actualiza_usuario extends Modelo {
-    /* Variables Globales Privadas */
+class actualiza_usuario extends ManejoBaseDatos {
+     public $nombre_tabla = 'evt_asistentes';
+     public $pk = 'id';
+     public $atributos = array(
+        'nombre_asistente' => array(),
+        'apellido_paterno' => array(),
+        'apellido_materno' => array(),
+        'genero' => array(),
+        'edad' => array(),
+        'email' => array(),
+        'nctrl_rfc' => array(),
+        'password' => array()
+    );
 
-    private $id_asistente;
-    private $nombre;
+    private $nombre_asistente;
     private $apellido_pat;
     private $apellido_mat;
     private $genero;
@@ -12,21 +22,12 @@ class actualiza_usuario extends Modelo {
     private $email;
     private $nctrl_rfc;
     private $pass;
-    public $atributos = array(
-        'nombre' => array(),
-        'apellido_pat' => array(),
-        'apellido_mat' => array(),
-        'genero' => array(),
-        'edad' => array(),
-        'email' => array(),
-        'nctrl_rfc' => array(),
-        'pass' => array()
-    );
+   
 
     /* Constructor */
 
-    public function actuliza_usuario() {
-        parent::Modelo('actuliza_usuario');
+    public function actualiza_usuario() {
+       parent::ManejoBaseDatos();
     }
 
     /* Obtener Valores */
@@ -39,12 +40,9 @@ class actualiza_usuario extends Modelo {
         return $rs;
     }
 
-    public function get_id_asistente() {
-        return $this->id_persona;
-    }
 
-    public function get_nombre() {
-        return $this->nombre;
+    public function get_nombre_asistente() {
+        return $this->nombre_asistente;
     }
 
     public function get_apellido_pat() {
@@ -68,97 +66,43 @@ class actualiza_usuario extends Modelo {
     }
     
     public function get_nctrl_rfc() {
-        return $this->genero;
+        return $this->nctrl_rfc;
     }
 
     public function get_pass() {
         return $this->pass;
     }
-
-    /* Asignar Valores */
-
-    public function set_id_asistente($valor) {
-        $this->id_persona = $valor;
-    }
-
-    public function set_nombre($valor) {
-        $resp = $this->valida("nombre", $valor);    
-        if ($resp) {
-            $this->nombre = $valor;
-        } else {
-            echo "$valor esta mal en el campo NOMBRE <br>";
-        }
-        return resp;
-    }
-
-    public function set_apellido_pat($valor) {
-        $resp = $this->valida("nombre", $valor);
-        if ($resp) {
-            $this->apellido_mat = $valor;
-        } else {
-            echo "$valor esta mal en el campo APELLIDO PAT <br>";
-        }
-        return resp;
-    }
-
-    public function set_apellido_mat($valor) {
-        $resp = $this->valida("nombre", $valor);
-        if ($resp) {
-            $this->apellido_pat = $valor;
-        } else {
-             echo "$valor esta mal en el campo APELLIDO MAT <br>";
-        }
-        return resp;
-    }
-
-    public function set_email($valor) {
-        $resp = $this->valida("email", $valor);
-        if ($resp) {
-            $this->email = $valor;
-        } else {
-             echo "$valor esta mal en el campo EMAIL <br>";
-        }
-        return resp;
-    }
-
-    public function set_genero($valor) {
-        $resp = $this->valida("genero", $valor);
-        if ($resp) {
-            $this->genero = $valor;
-        } else {
-             echo "$valor esta mal en el campo GENERO <br>";
-        }
-        return resp;
-    }
-
-    public function set_edad($valor) {
-        $resp = $this->valida("edad", $valor);
-        if ($resp) {
-            $this->edad = $valor;
-        } else {
-             echo "$valor esta mal en el campo EDAD <br>";
-        }
-        return resp;
+    
+    public function set_nombre_asistente($valor){
+        $this->nombre_asistente = $valor;
     }
     
-    public function set_nctrl_rfc($valor) {
-        $resp = $this->valida("entero", $valor);
-        if ($resp) {
-            $this->nctrl_rfc = $valor;
-        } else {
-             echo "$valor esta mal en el campo EDAD <br>";
-        }
-        return resp;
+    public function set_apellido_pat($valor){
+        $this->apellido_pat = $valor;
     }
-
-    public function set_pass($valor) {
-        $resp = $this->valida("pass", $valor);
-        if ($resp) {
-            $this->pass = $valor;
-        } else {
-             echo "$valor esta mal en el campo  PASS <br>";
-        }
-        return resp;
+    
+    public function set_apellido_mat($valor){
+        $this->apellido_mat = $valor;
+    }
+    
+    public function set_email($valor){
+        $this->email = $valor;
+    }
+    
+    public function set_genero($valor){
+        $this->genero = $valor;
+    }
+    
+    public function set_edad($valor){
+        $this->edad = $valor;
+    }
+    
+    public function set_nctrl_rfc($valor){
+        $this->nctrl_rfc= $valor;
+    }
+    
+    public function set_pass($valor){
+        $this->pass= $valor;
     }
 
 }

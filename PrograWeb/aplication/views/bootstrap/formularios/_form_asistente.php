@@ -2,12 +2,12 @@
 <?php
 include ('../../layouts/header.php');
 include('../../layouts/navegador.php');
+
 ?>
 
 <div class="container">   
-    <form action="" method="post" class="well">
-        <h3 class="form-signin-heading" >Asistente</h3>
-        <br>
+    <form action="../../admin/registra_usuario.php" method="post" class="well">
+        <h1>Asistente</h1>
         <label for="id_asistente">id asistente</label>
         <input id="id_asistente" type="text" class="span3" placeholder="ID" required="required">      
         <label for="nombre_asistente">Nombre</label>
@@ -32,12 +32,5 @@ include('../../layouts/navegador.php');
 </div> 
 
 <?php
-<<<<<<< HEAD
-
  include ('../../layouts/footer.php');
-
 ?>
-=======
-include ('../../layouts/footer.php');
-?>
->>>>>>> df185b55babb468057c1e7767f58a2c4e116d07f

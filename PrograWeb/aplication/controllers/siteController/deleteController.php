@@ -10,7 +10,8 @@
     {
         parent:: deleteUser(); 
         $rs=$this->consulta_existencia($email);
-        echo $email;
+        //echo $email;
+        
         return $rs;
     }
   }

@@ -11,7 +11,7 @@
       //echo "Email:".",".$_POST['email'];
       if($deleteUser->borra($_POST['email']))
       {
-          echo "Hay registro";
+          echo $deleteUser->borra($email);
       }
       else
       {

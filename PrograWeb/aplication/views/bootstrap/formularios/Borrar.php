@@ -6,15 +6,24 @@
   include("../../../controllers/siteController/deleteController.php");
 
   $deleteUser = new deleteController();
+  
+  
+  
+
   if(isset($_POST['email']))
   {
       //echo "Email:".",".$_POST['email'];
       if($deleteUser->borra($_POST['email']))
       {
+<<<<<<< HEAD
           if($deleteUser->borra($_POST['email']))
           {
               echo "Borro con exito";
           }
+=======
+          //echo $deleteUser->borra($_POST['email']);
+          
+>>>>>>> 1ab4806d676bf6cb3e97a7035ba81ba85466a4d9
       }
       else
       {
@@ -65,6 +74,9 @@
 	  <input type="text" class="login-field" value placeholder="Email" id="email" name="email">
 	  <input type="submit" value="Consultar" class=" btn btn-primary">
 	  <br>
+          <textarea id="show" name="show"> 
+               
+          </textarea>
 	  <input type="submit" value="Borrar" class=" btn btn-primary">
 	</form>
   </div>

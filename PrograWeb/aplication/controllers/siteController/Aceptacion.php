@@ -1,9 +1,4 @@
 <?php
-include('../../views/layouts/header.php');
-include('../../models/ManejoBaseDatos.php');
-include('../../libs/adodb5/adodb.inc.php');
-
-
     Class Aceptacion extends ManejoBaseDatos {
         
         public function Aceptacion() {
@@ -18,4 +13,3 @@ include('../../libs/adodb5/adodb.inc.php');
        } 
     }
  ?>   
-<a href="../../views/bootstrap/formularios/_form_reset_password.php"><button type="button" id="siguient" class="btn btn-danger">Salir</button></a>

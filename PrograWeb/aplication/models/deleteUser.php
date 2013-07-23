@@ -1,19 +1,20 @@
 <?php
-
-class actualiza_usuario extends ManejoBaseDatos {
-     public $nombre_tabla = 'evt_asistentes';
-     public $pk = 'id';
-     public $atributos = array(
-        'nombre_asistente' => array(),
+  class deleteUser extends ManejoBaseDatos{
+      public $nombre_tabla='usuarios_detalles';
+      public $pk = 'id';
+      public $atributos = array(
+        
         'apellido_paterno' => array(),
         'apellido_materno' => array(),
-        'genero' => array(),
+        'nombre'=>array(),  
+        'sexo' => array(),
         'edad' => array(),
         'email' => array(),
         'nctrl_rfc' => array(),
-        'password' => array()
+        'password'=>array() 
+        
     );
-
+      
     private $nombre_asistente;
     private $apellido_pat;
     private $apellido_mat;
@@ -22,16 +23,11 @@ class actualiza_usuario extends ManejoBaseDatos {
     private $email;
     private $nctrl_rfc;
     private $pass;
-   
-
-    /* Constructor */
-
-    public function actualiza_usuario() {
+    
+     public function deleteUser() {
        parent::ManejoBaseDatos();
     }
-
-    /* Obtener Valores */
-
+    
     public function get_atributos() {
         $rs = array();
         foreach ($this->atributos as $key => $value) {
@@ -39,41 +35,8 @@ class actualiza_usuario extends ManejoBaseDatos {
         }
         return $rs;
     }
-
-
-    public function get_nombre_asistente() {
-        return $this->nombre_asistente;
-    }
-
-    public function get_apellido_pat() {
-        return $this->apellido_pat;
-    }
-
-    public function get_id_apellido_mat() {
-        return $this->apellido_mat;
-    }
-
-    public function get_email() {
-        return $this->email;
-    }
-
-    public function get_genero() {
-        return $this->genero;
-    }
-
-    public function get_edad() {
-        return $this->edad;
-    }
     
-    public function get_nctrl_rfc() {
-        return $this->nctrl_rfc;
-    }
-
-    public function get_pass() {
-        return $this->pass;
-    }
-    
-    public function set_nombre_asistente($valor){
+     public function set_nombre_asistente($valor){
         $this->nombre_asistente = $valor;
     }
     
@@ -104,6 +67,5 @@ class actualiza_usuario extends ManejoBaseDatos {
     public function set_pass($valor){
         $this->pass= $valor;
     }
-
-}
+  }
 ?>

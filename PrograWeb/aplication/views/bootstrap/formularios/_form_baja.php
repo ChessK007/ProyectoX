@@ -1,6 +1,11 @@
 <?php
 include('../../layouts/header.php');
 include('../../layouts/navegador.php');
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
 ?>
 <div class="container">
     <form class="well" method="get" action="#">

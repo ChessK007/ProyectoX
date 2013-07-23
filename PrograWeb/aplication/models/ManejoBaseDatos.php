@@ -1,70 +1,81 @@
 <?php
-
-include ('../libs/adodb5/adodb.inc.php');
-?>
-
-<?php
-
 class ManejoBaseDatos {
-    
+
     private $db;
-    
-    
+
     function ManejoBaseDatos() {
+        
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
-        $this->db->Connect('localhost', 'root', '', 'ProyectoX');
-        if(db){
-            echo 'Chido';
+        $this->db->Connect('localhost','root','','proyecto');
+        }
+    
+    public function consulta_datos($em){
+        $rs = "select * from " . $this->nombre_tabla . "where id = " . $em;
+        /*$rs = $this->db->Execute('SELECT * from '.$this->nombre_tabla);*/
+        $this->get_error($rs,'Error en consulta datos');
+        return $rs;
+    }
+    
+    public function consulta_existencia($email){
+        $rs = "select * from". $this->nombre_tabla. "where email= ".$email;
+        return $rs;
+        print_r($rs->getRows());
+    }
+     
+    public function inserta($rs){
+        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla,$rs);
+        return $this->get_error($this->db->Execute($sql_insert),'Error en Modelo.inserta');
+    }
+    
+    public function get_error($result,$tipo_error){
+        if($result === false){
+            die('Redireccionar a la pagina de error '.$tipo_error);
+            return false;
         }else{
-            echo $db;
+            return true;
         }
-        
-        $nombre_asistente = $_POST["nombre_asistente"];
-        $apellido_paterno = $_POST["apellido_paterno"];
-        $apellido_materno = $_POST["apellido_materno"];
-        $genero = $_POST["genero"];
-        $edad = $_POST["edad"];
-        $email = $_POST["email"];
-        $nctrl_rfc = $_POST["nctrl_rfc"];
-        $password = $_POST["password"];
-        
-        $actual = mysqli_query($enlace,"call actualiza('$nombre_asistente','$apellido_paterno',
-                                                        '$apellido_materno','$genero','$edad',
-                                                        ,'$email','$nctrl_rfc')");
-        if (!$actual){
-            echo "Error al guardar";
+    }
+       
+    public function resetear_password($email) {
+        if (isset($_POST["email"])) {
+            if (is_integer($email)) {
+                $sql = "select password from " . $this->nombre_tabla . "where id = " . $email;
+                $record = $this->db->Execute($sql);
+                $rs = array();
+                $rs['password'] = '1111';
+                $sql_update = $this->db->GetUpdateSQL($record, $rs);
+            } else {
+                die('Verifica el tu Correo Electronico');
             }
-            else{echo "Guardado con exito";}
-        mysqli_close($enlace);
-    }   
-    
-    public function resetear_password($id) {
-        if (is_integer($id)) {
-            $sql = "select password from " . $this->nombre_tabla . "where id = " . $id;
-            $record = $this->db->Execute($sql);
-            $rs = array();
-            $rs['password'] = '1111';
-            $sql_update = $this->db->GetUpdateSQL($record, $rs);
-            $this->db->Execute($sql_update);
-        } else {
-            die('Verifica el ID');
         }
     }
-    
-    public function resibe($id) {
-        if (is_integer($id)) {
-            $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
-            $record = $this->db->Execute($sql);
-            $rs = array();
-            $rs['password'] = '1111';
-            $sql_update = $this->db->GetUpdateSQL($record, $rs);
-            $this->db->Execute($sql_update);
-        } else {
-            die('Verifica el ID');
-        }
-    }
-    
 
+//resetear
+    
+    public function actualiza($nombre_asistente,$apellido_paterno,
+                                                        $apellido_materno,$genero,$edad,
+                                                        $email,$nctrlrfc) {
+        $id = "SELECT nctrl_rfc FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc;
+        $record = $this->db->Execute($id);
+        if(strcmp($id, $nctrlrfc)){
+            $sql = "SELECT * FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc; 
+            
+            $record = $this->db->Execute($sql);
+            $rs = array();
+            $rs['nombre_asistente'] = $nombre_asistente;
+            $rs['apellido_paterno'] = $apellido_paterno;
+            $rs['apellido_materno'] = $apellido_materno;
+            $rs['genero'] = $genero;
+            $rs['edad'] = $edad;
+            $rs['email'] = $email;
+            $rs['nctrlrfc'] = $nctrlrfc;
+            $sql_update = $this->db->GetUpdateSQL($record,$rs);
+            $this->get_error($this->db->Execute($sql_update),'Error al actualizar');
+        }else{
+            die('OJO ');
+        }
+    }
+           
 }
 ?>

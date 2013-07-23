@@ -31,15 +31,5 @@ include('../../layouts/navegador.php');
 </div> 
 
 <?php
-<<<<<<< HEAD
-//<<<<<<< HEAD
-
  include ('../../layouts/footer.php');
-
 ?>
-=
-=======
-include ('../../layouts/footer.php');
-?>
-
->>>>>>> 21efca02226d6ff4db988016848394854540d199

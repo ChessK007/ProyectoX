@@ -1,14 +1,18 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
 <?php
 
 class ManejoBaseDatos {
-    
+
     private $db;
-    
-    
+
     function ManejoBaseDatos() {
         
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
+<<<<<<< HEAD
         $this->db->Connect('localhost','root','len21se13','eventositc');
         }
     
@@ -38,19 +42,65 @@ class ManejoBaseDatos {
         return true;
     }*/
     
-    public function resetear_password($email) {
-        if(isset($_POST["email"]))
-    {
-        if (is_integer($email)) {
-            $sql = "select password from " . $this->nombre_tabla . "where id = " . $email;
-            $record = $this->db->Execute($sql);
-            $rs = array();
-            $rs['password'] = '1111';
-            $sql_update = $this->db->GetUpdateSQL($record, $rs);
-            
+=======
+        $this->db->Connect('localhost', 'root', '', 'EventosITC');
+        if (db) {
+            echo 'Chido';
         } else {
-            die('Verifica el tu Correo Electronico');
+            echo $db;
         }
+
+        $id_asistentes = $_POST["id_asistentes"];
+        $nombre_asistente = $_POST["nombre_asistente"];
+        $apellido_paterno = $_POST["apellido_paterno"];
+        $apellido_materno = $_POST["apellido_materno"];
+        $genero = $_POST["genero"];
+        $edad = $_POST["edad"];
+        $email = $_POST["email"];
+        $nctrl_rfc = $_POST["nctrl_rfc"];
+        $password = $_POST["password"];
+
+        $actual = mysqli_query($enlace, "call actualiza('$nombre_asistente','$apellido_paterno',
+                                                        '$apellido_materno','$genero','$edad',
+                                                        ,'$email','$nctrl_rfc')");
+        if (!$actual) {
+            echo "Error al guardar";
+        } else {
+            echo "Guardado con exito";
+        }
+        mysqli_close($enlace);
+    }
+
+    public function inserta($rs) {
+        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla, $rs);
+        return $this->get_error($this->db->Execute($sql_insert), 'Error en Modelo.inserta');
+    }
+
+>>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
+    public function resetear_password($email) {
+        if (isset($_POST["email"])) {
+            if (is_integer($email)) {
+                $sql = "select password from " . $this->nombre_tabla . "where id = " . $email;
+                $record = $this->db->Execute($sql);
+                $rs = array();
+                $rs['password'] = '1111';
+                $sql_update = $this->db->GetUpdateSQL($record, $rs);
+            } else {
+                die('Verifica el tu Correo Electronico');
+            }
+        }
+    }
+
+//resetear
+
+    public function get_error($result, $tipo_error) {
+        if ($result === false) {
+
+            return false; //No se hizo nada
+        } else {
+            return TRUE;
+        }
+<<<<<<< HEAD
     }  
   }//resetear
  
@@ -106,6 +156,10 @@ class ManejoBaseDatos {
     }
            
     
+=======
+    }
+
+>>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
     public function resibe($id) {
         if (is_integer($id)) {
             $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
@@ -118,7 +172,7 @@ class ManejoBaseDatos {
             die('Verifica el ID');
         }
     }
-    
+
 }
 ?>
 

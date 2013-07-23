@@ -1,7 +1,6 @@
 
 <?php
 include ('../../layouts/header.php');
-<<<<<<< HEAD
 include ('../../layouts/navegador.php');
 include ('../../../models/ManejoBaseDatos.php');
 include ('../../../models/registra_usuario.php');
@@ -18,14 +17,9 @@ $usuario = new RegistroController();
             exit();
         }
     }
-=======
-include('../../layouts/navegador.php');
->>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
-
 ?>
 
 <div class="container">   
-<<<<<<< HEAD
     <form action="" method="post" class="well">
         <h3 class="form-signin-heading" >Asistente</h3>
         <br>
@@ -45,7 +39,6 @@ include('../../layouts/navegador.php');
             <input id="usuario[nctrl_rfc]" name="usuario[nctrl_rfc]" type="text" class="span3" placeholder="N.Control o RFC" required="required">
             <label for="usuario[password]">Password</label>
             <input id="usuario[password]" name="usuario[password]" type="password" class="span3" placeholder="password" required="required"> 	
-=======
     <form action="../../admin/registra_usuario.php" method="post" class="well">
         <h1>Asistente</h1>
         <label for="id_asistente">id asistente</label>
@@ -65,7 +58,6 @@ include('../../layouts/navegador.php');
             <input id="nctrl_rfc" type="text" class="span3" placeholder="N.Control" required="required">
             <label for="password">Password</label>
             <input id="password" type="password" class="span3" placeholder="password" required="required"> 	
->>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
             <br>
             <button type="submit" class="btn btn-primary">Aceptar</button>
             <a href="_form_index.html">  <button type="button" class="btn btn-danger">Regresar </button> </a>
@@ -73,12 +65,5 @@ include('../../layouts/navegador.php');
 </div> 
 
 <?php
-<<<<<<< HEAD
-
-
  include ('../../layouts/footer.php');
-
-=======
- include ('../../layouts/footer.php');
->>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
 ?>

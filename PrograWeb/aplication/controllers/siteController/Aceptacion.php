@@ -1,12 +1,8 @@
 <?php
-<<<<<<< HEAD
 include('../../views/layouts/header.php');
 include('../../models/ManejoBaseDatos.php');
 include('../../libs/adodb5/adodb.inc.php');
 
-
-=======
->>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
     Class Aceptacion extends ManejoBaseDatos {
         
         public function Aceptacion() {
@@ -21,7 +17,5 @@ include('../../libs/adodb5/adodb.inc.php');
        } 
     }
  ?>   
-<<<<<<< HEAD
 <a href="../../views/bootstrap/formularios/_form_reset_password.php"><button type="button" id="siguient" class="btn btn-danger">Salir</button></a>
-=======
->>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
+

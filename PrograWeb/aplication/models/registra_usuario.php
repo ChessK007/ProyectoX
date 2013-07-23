@@ -1,5 +1,14 @@
 <?php
 
+<<<<<<< HEAD
+Class Usuario extends ManejoBaseDatos{
+    public $nombre_tabla='evt_asistentes';
+    
+    public $atributos=array(
+            'nombre_asistente'=>array(),
+            'apellido_paterno'=>array(),
+            'apellido_materno'=>array(),
+=======
 Class Usuario extends ManejorBaseDatos{
     private $id_asistente;
     private $nombre;
@@ -14,13 +23,32 @@ Class Usuario extends ManejorBaseDatos{
             'nombre'=>array(),
             'apeliido_pat'=>array(),
             'apellido_mat'=>array(),
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
             'genero'=>array(),
             'edad'=>array(),
             'email'=>array(),
             'nctrl_rfc'=>array(),
+<<<<<<< HEAD
+            'password'=>array(),
+        
+        
+    );
+    
+    private $id_asistente;
+    private $nombre_asistente;
+    private $apellido_paterno;
+    private $apellido_materno;
+    private $genero;
+    private $edad;
+    private $email;
+    private $nctrl_rfc;
+    private $password;
+    
+=======
             'pass'=>array(),
     );
     
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
     function Usuario(){
         parent::ManejoBaseDatos();
     }
@@ -36,36 +64,60 @@ Class Usuario extends ManejorBaseDatos{
     
     
     public function get_nombre(){
+<<<<<<< HEAD
+        return $this->nombre_asistente;
+=======
         return $this->nombre;
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
     }
     
     public function set_nombre($valor){
         if($this->valida('nombre',$valor)){
+<<<<<<< HEAD
+            $this->nombre_asistente=$valor;
+=======
             $this->nombre=$valor;
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
             return true;
         }else
             return false;
     }
     
     public function get_apellidoPat(){
+<<<<<<< HEAD
+        return $this->apellido_paterno;
+=======
         return $this->apellido_pat;
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
     }
     
     public function set_apellidoPat($valor){
         if($this->valida('nombre',$valor)){
+<<<<<<< HEAD
+            $this->apellido_paterno=$valor;
+=======
             $this->apellido_pat=$valor;
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
             return true;
         }else
             return false;
     }
     
     public function get_apellidoMat(){
+<<<<<<< HEAD
+        return $this->apellido_materno;
+=======
         return $this->apellido_mat;
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
     }
     
     public function set_apellidoMat($valor){
         if($this->valida('nombre',$valor)){
+<<<<<<< HEAD
+            $this->apellido_materno=$valor;
+=======
             $this->apellido_mat=$valor;
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
             return true;
         }else
             return false;
@@ -120,12 +172,21 @@ Class Usuario extends ManejorBaseDatos{
     }
     
     public function get_password(){
+<<<<<<< HEAD
+        return $this->password;
+    } 
+    
+    public function set_password($valor){
+        if($this->valida('pass',$valor)){
+            $this->password= md5($valor);
+=======
         return $this->pass;
     } 
     
     public function set_password($valor){
         if($this->valida_er('pass',$valor)){
             $this->pass= md5($valor);
+>>>>>>> dc8d99acf13dd13c785e27bbadc884ea5103ef1f
             return true;
         }else
             return false;

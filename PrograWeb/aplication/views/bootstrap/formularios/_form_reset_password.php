@@ -1,6 +1,4 @@
 <?php
-include ('../libs/adodb5/adodb.inc.php');
-
 include('../../layouts/header.php');
 include('../../layouts/navegador.php');
 //include('../../../models/ManejoBaseDatos.php');

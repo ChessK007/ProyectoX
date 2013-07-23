@@ -18,7 +18,11 @@
             $this->set_email($valores['email']);
             $this->set_nctrl_rfc($valores['nctrl_rfc']);
             return $rs = $this->actualiza($this->get_nombre_asistente(),$this->get_apellido_pat(),  $this->get_id_apellido_mat(),  $this->get_genero(),
-            $this->get_edad(), $this->get_email(), $this->get_nctrl_rfc());
+            $this->get_edad(), $this->get_email(), $this->get_nctrl_rfc());            
+        }
+        
+        function ingresausuario(){
+            
         }
        
     }

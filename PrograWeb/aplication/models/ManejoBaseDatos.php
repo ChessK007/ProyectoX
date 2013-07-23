@@ -20,8 +20,8 @@ class ManejoBaseDatos {
         return $rs;
     }
     
-    public function consulta_existencia($email){
-        $sql = 'select id_usuario_detalle from '. $this->nombre_tabla. ' where email=  '.$email;
+    public function consulta_existencia($sql){
+        //$sql = 'select id_usuario_detalle from '. $this->nombre_tabla. ' where email=  '.$email;
         $rs= $this->db->Execute($sql);
         $this->get_error($rs,'error en la consulta');
        

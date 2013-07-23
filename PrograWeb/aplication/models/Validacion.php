@@ -4,8 +4,7 @@ class Validacion {
 
     private $expresion = array(
             'nombre' => "/^[a-zA-Z\s]+$/",
-            'pass' => "/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/", //sigue estando mal
-            'pass' => "/^([a-z]+[A-Z]+\d+\W+)([a-z]+[A-Z]+\d+\W+)$/", 
+            'password' => "/^([a-z]+[A-Z]+\d+\W+)([a-z]+[A-Z]+\d+\W+)$/", 
             'entero' => "/^[0-9]+$/",
             'decimal' => "/^[0-9]*\.[0-9]+$/",
             'genero' => "/^[M|F]{1}$/",

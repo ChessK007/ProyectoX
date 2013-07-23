@@ -11,7 +11,10 @@
       //echo "Email:".",".$_POST['email'];
       if($deleteUser->borra($_POST['email']))
       {
-          echo $deleteUser->borra($email);
+          if($deleteUser->borra($_POST['email']))
+          {
+              echo "Borro con exito";
+          }
       }
       else
       {

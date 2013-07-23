@@ -6,42 +6,33 @@ class ManejoBaseDatos {
     private $db;
 
     function ManejoBaseDatos() {
-        parent::Validacion();
+        
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
-        $this->db->Connect('localhost', 'root', '', 'EventosITC');
-        if (db) {
-            echo 'Chido';
-        } else {
-            echo $db;
+        $this->db->Connect('localhost','root','len21se13','eventositc');
         }
-
-        $id_asistentes = $_POST["id_asistentes"];
-        $nombre_asistente = $_POST["nombre_asistente"];
-        $apellido_paterno = $_POST["apellido_paterno"];
-        $apellido_materno = $_POST["apellido_materno"];
-        $genero = $_POST["genero"];
-        $edad = $_POST["edad"];
-        $email = $_POST["email"];
-        $nctrl_rfc = $_POST["nctrl_rfc"];
-        $password = $_POST["password"];
-
-        $actual = mysqli_query($enlace, "call actualiza('$nombre_asistente','$apellido_paterno',
-                                                        '$apellido_materno','$genero','$edad',
-                                                        ,'$email','$nctrl_rfc')");
-        if (!$actual) {
-            echo "Error al guardar";
-        } else {
-            echo "Guardado con exito";
+    
+    public function consulta_datos($em){
+        $rs = "select * from " . $this->nombre_tabla . "where id = " . $em;
+        /*$rs = $this->db->Execute('SELECT * from '.$this->nombre_tabla);*/
+        $this->get_error($rs,'Error en consulta datos');
+        return $rs;
+    }
+     
+    public function inserta($rs){
+        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla,$rs);
+        return $this->get_error($this->db->Execute($sql_insert),'Error en Modelo.inserta');
+    }
+    
+    public function get_error($result,$tipo_error){
+        if($result === false){
+            die('Redireccionar a la pagina de error '.$tipo_error);
+            return false;
+        }else{
+            return true;
         }
-        mysqli_close($enlace);
     }
-
-    public function inserta($rs) {
-        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla, $rs);
-        return $this->get_error($this->db->Execute($sql_insert), 'Error en Modelo.inserta');
-    }
-
+       
     public function resetear_password($email) {
         if (isset($_POST["email"])) {
             if (is_integer($email)) {
@@ -57,29 +48,31 @@ class ManejoBaseDatos {
     }
 
 //resetear
-
-    public function get_error($result, $tipo_error) {
-        if ($result === false) {
-
-            return false; //No se hizo nada
-        } else {
-            return TRUE;
-        }
-    }
-
-    public function resibe($id) {
-        if (is_integer($id)) {
-            $sql = "select * from " . $this->nombre_tabla . "where id = " . $id;
+    
+    public function actualiza($nombre_asistente,$apellido_paterno,
+                                                        $apellido_materno,$genero,$edad,
+                                                        $email,$nctrlrfc) {
+        $id = "SELECT nctrl_rfc FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc;
+        $record = $this->db->Execute($id);
+        if(strcmp($id, $nctrlrfc)){
+            $sql = "SELECT * FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc; 
+            
             $record = $this->db->Execute($sql);
             $rs = array();
-            $rs['password'] = '1111';
-            $sql_update = $this->db->GetUpdateSQL($record, $rs);
-            $this->db->Execute($sql_update);
-        } else {
-            die('Verifica el ID');
+            $rs['nombre_asistente'] = $nombre_asistente;
+            $rs['apellido_paterno'] = $apellido_paterno;
+            $rs['apellido_materno'] = $apellido_materno;
+            $rs['genero'] = $genero;
+            $rs['edad'] = $edad;
+            $rs['email'] = $email;
+            $rs['nctrlrfc'] = $nctrlrfc;
+            $sql_update = $this->db->GetUpdateSQL($record,$rs);
+            $this->get_error($this->db->Execute($sql_update),'Error al actualizar');
+        }else{
+            die('OJO ');
         }
     }
-
-}
+           
+    }
 ?>
 

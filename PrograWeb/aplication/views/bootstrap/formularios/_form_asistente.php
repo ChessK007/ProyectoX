@@ -31,6 +31,7 @@ include('../../layouts/navegador.php');
 </div> 
 
 <?php
-include ('../../layouts/footer.php');
-?>
 
+ include ('../../layouts/footer.php');
+
+?>

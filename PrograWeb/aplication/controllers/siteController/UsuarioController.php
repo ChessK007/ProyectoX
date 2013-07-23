@@ -1,25 +1,27 @@
-<pre>
+
     <?php
 
 
     class UsuarioController extends actualiza_usuario {
 
         function UsuarioController() {
-            
         }
 
-        public function registrausuario($atributos) {
+        public function registrausuario($valores) {
             parent::actualiza_usuario();
-            $this->set_nombre($atributos['nombre']);
-            $this->set_apellido_pat($atributos['apellido_paterno']);
-            $this->set_apellido_mat($atributos['apellido_materno']);
-            $this->set_email($atributos['email']);
-            $this->set_genero($atributos['genero']);
-            $this->set_edad($atributos['edad']);
-            $this->set_edad($atributos['email']);
-            $this->set_edad($atributos['nctrl_rfc']);
-            $this->set_pass($atributos['password']);
-            return $rs = $this->inserta($this->get_atributos());
+            $this->set_nombre($valores['nombre']);
+            $this->set_apellido_pat($valores['apellido_paterno']);
+            $this->set_apellido_mat($valores['apellido_materno']);
+            $this->set_email($valores['email']);
+            $this->set_genero($valores['genero']);
+            $this->set_edad($valores['edad']);
+            $this->set_email($valores['email']);
+            $this->set_nctrl_rfc($valores['nctrl_rfc']);
+            $this->set_pass($valores['password']);
+           /* return $rs = $this->inserta($this->get_atributos());*/
+            /*return $rs = $this->consulta_datos($this->get_email());*/
+            return $rs = $this->actualiza($this->get_nombre(),$this->get_apellido_pat(),  $this->get_id_apellido_mat(),  $this->get_genero(),
+            $this->get_edad(), $this->get_email(), $this->get_nctrl_rfc());
         }
         
               
@@ -34,4 +36,3 @@
         
     }
     ?>
-</pre>

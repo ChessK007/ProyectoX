@@ -1,9 +1,19 @@
 <?php
 
 class actualiza_usuario extends ManejoBaseDatos {
-    /* Variables Globales Privadas */
+     public $nombre_tabla = 'evt_asistentes';
+     public $pk = 'id';
+     public $atributos = array(
+        'nombre_asistente' => array(),
+        'apellido_paterno' => array(),
+        'apellido_materno' => array(),
+        'genero' => array(),
+        'edad' => array(),
+        'email' => array(),
+        'nctrl_rfc' => array(),
+        'password' => array()
+    );
 
-    private $id_asistente;
     private $nombre;
     private $apellido_pat;
     private $apellido_mat;
@@ -12,21 +22,12 @@ class actualiza_usuario extends ManejoBaseDatos {
     private $email;
     private $nctrl_rfc;
     private $pass;
-    public $atributos = array(
-        'nombre' => array(),
-        'apellido_pat' => array(),
-        'apellido_mat' => array(),
-        'genero' => array(),
-        'edad' => array(),
-        'email' => array(),
-        'nctrl_rfc' => array(),
-        'pass' => array()
-    );
+   
 
     /* Constructor */
 
     public function actualiza_usuario() {
-        parent::ManejoBaseDatos();
+       parent::ManejoBaseDatos();
     }
 
     /* Obtener Valores */
@@ -39,10 +40,6 @@ class actualiza_usuario extends ManejoBaseDatos {
         return $rs;
     }
 
-    public function get_id_asistente() {
-        return $this->id_asistente;
-        
-    }
 
     public function get_nombre() {
         return $this->nombre;
@@ -78,7 +75,7 @@ class actualiza_usuario extends ManejoBaseDatos {
 
     /* Asignar Valores */
 
-    public function set_id_asistente($valor) {
+   /* public function set_id_asistente($valor) {
         $this->id_persona = $valor;
     }
 
@@ -160,6 +157,38 @@ class actualiza_usuario extends ManejoBaseDatos {
              echo "$valor esta mal en el campo  PASS <br>";
         }
         return resp;
+    }*/
+    
+    public function set_nombre($valor){
+        $this->nombre = $valor;
+    }
+    
+    public function set_apellido_pat($valor){
+        $this->apellido_pat = $valor;
+    }
+    
+    public function set_apellido_mat($valor){
+        $this->apellido_mat = $valor;
+    }
+    
+    public function set_email($valor){
+        $this->email = $valor;
+    }
+    
+    public function set_genero($valor){
+        $this->genero = $valor;
+    }
+    
+    public function set_edad($valor){
+        $this->edad = $valor;
+    }
+    
+    public function set_nctrl_rfc($valor){
+        $this->nctrl_rfc= $valor;
+    }
+    
+    public function set_pass($valor){
+        $this->pass= $valor;
     }
 
 }

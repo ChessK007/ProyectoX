@@ -1,16 +1,12 @@
-<<<<<<< HEAD
-<?php
-=======
-
 <?php
 
->>>>>>> 997be997464079abb1b061dd029237c078288e44
+
 class ManejoBaseDatos {
 
     private $db;
 
     function ManejoBaseDatos() {
-<<<<<<< HEAD
+
         
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;

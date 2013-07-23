@@ -2,6 +2,7 @@
 <?php
 include ('../../layouts/header.php');
 include('../../layouts/navegador.php');
+
 ?>
 
 <div class="container">   

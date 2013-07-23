@@ -1,6 +1,8 @@
 <?php
 include('../../layouts/header.php');
 include('../../layouts/navegador.php');
+
+
 ?>
 <div class="container">
     <form class="well" method="get" action="#">

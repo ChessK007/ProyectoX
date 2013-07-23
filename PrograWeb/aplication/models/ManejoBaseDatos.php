@@ -53,7 +53,7 @@ class ManejoBaseDatos {
         $id = "SELECT nctrl_rfc FROM  " . $this->nombre_tabla . " WHERE nctrl_rfc = " . $nctrlrfc;
         $record = $this->db->Execute($id);
         if (strcmp($id, $nctrlrfc)) {
-            $sql = "SELECT * FROM  " . $this->nombre_tabla . " WHERE nctrl_rfc = " . $nctrlrfc;
+            $sql= "SELECT * FROM  " . $this->nombre_tabla . " WHERE nctrl_rfc = " . $nctrlrfc;
 
             $record = $this->db->Execute($sql);
             $rs = array();

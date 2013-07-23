@@ -9,7 +9,7 @@ class ManejoBaseDatos {
         
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
-        $this->db->Connect('localhost','root','len21se13','eventositc');
+        $this->db->Connect('localhost','root','','eventositc');
         }
     
     public function consulta_datos($em){
@@ -35,8 +35,9 @@ class ManejoBaseDatos {
        
     public function resetear_password($email) {
         if (isset($_POST["email"])) {
-            if (is_integer($email)) {
-                $sql = "select password from " . $this->nombre_tabla . "where id = " . $email;
+            $x = "select email from " . $this->nombre_tabla . "where email = " . $email;
+            if (strcmp($x, $email)) {
+                $sql = "select email from " . $this->nombre_tabla . "where email = " . $email;
                 $record = $this->db->Execute($sql);
                 $rs = array();
                 $rs['password'] = '1111';

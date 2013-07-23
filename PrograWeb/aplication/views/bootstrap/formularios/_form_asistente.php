@@ -5,7 +5,7 @@ include('../../layouts/navegador.php');
 ?>
 
 <div class="container">   
-    <form action="" method="post" class="well">
+    <form action="../../admin/registra_usuario.php" method="post" class="well">
         <h1>Asistente</h1>
         <label for="id_asistente">id asistente</label>
         <input id="id_asistente" type="text" class="span3" placeholder="ID" required="required">      
@@ -31,9 +31,5 @@ include('../../layouts/navegador.php');
 </div> 
 
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> 2ff753dafdfdbd0dd7968ed55469afbad06985f0
  include ('../../layouts/footer.php');
 ?>

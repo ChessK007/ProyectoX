@@ -6,33 +6,33 @@ class ManejoBaseDatos {
     private $db;
 
     function ManejoBaseDatos() {
-        
+
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
-        $this->db->Connect('localhost','root','len21se13','eventositc');
-        }
-    
-    public function consulta_datos($em){
+        $this->db->Connect('localhost', 'root', 'len21se13', 'eventositc');
+    }
+
+    public function consulta_datos($em) {
         $rs = "select * from " . $this->nombre_tabla . "where id = " . $em;
-        /*$rs = $this->db->Execute('SELECT * from '.$this->nombre_tabla);*/
-        $this->get_error($rs,'Error en consulta datos');
+        /* $rs = $this->db->Execute('SELECT * from '.$this->nombre_tabla); */
+        $this->get_error($rs, 'Error en consulta datos');
         return $rs;
     }
-     
-    public function inserta($rs){
-        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla,$rs);
-        return $this->get_error($this->db->Execute($sql_insert),'Error en Modelo.inserta');
+
+    public function inserta($rs) {
+        $sql_insert = $this->db->GetInsertSQL($this->nombre_tabla, $rs);
+        return $this->get_error($this->db->Execute($sql_insert), 'Error en Modelo.inserta');
     }
-    
-    public function get_error($result,$tipo_error){
-        if($result === false){
-            die('Redireccionar a la pagina de error '.$tipo_error);
+
+    public function get_error($result, $tipo_error) {
+        if ($result === false) {
+            die('Redireccionar a la pagina de error ' . $tipo_error);
             return false;
-        }else{
+        } else {
             return true;
         }
     }
-       
+
     public function resetear_password($email) {
         if (isset($_POST["email"])) {
             if (is_integer($email)) {
@@ -48,15 +48,13 @@ class ManejoBaseDatos {
     }
 
 //resetear
-    
-    public function actualiza($nombre_asistente,$apellido_paterno,
-                                                        $apellido_materno,$genero,$edad,
-                                                        $email,$nctrlrfc) {
-        $id = "SELECT nctrl_rfc FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc;
+
+    public function actualiza($nombre_asistente, $apellido_paterno, $apellido_materno, $genero, $edad, $email, $nctrlrfc) {
+        $id = "SELECT nctrl_rfc FROM  " . $this->nombre_tabla . " WHERE nctrl_rfc = " . $nctrlrfc;
         $record = $this->db->Execute($id);
-        if(strcmp($id, $nctrlrfc)){
-            $sql = "SELECT * FROM  ".$this->nombre_tabla." WHERE nctrl_rfc = ".$nctrlrfc; 
-            
+        if (strcmp($id, $nctrlrfc)) {
+            $sql = "SELECT * FROM  " . $this->nombre_tabla . " WHERE nctrl_rfc = " . $nctrlrfc;
+
             $record = $this->db->Execute($sql);
             $rs = array();
             $rs['nombre_asistente'] = $nombre_asistente;
@@ -66,13 +64,13 @@ class ManejoBaseDatos {
             $rs['edad'] = $edad;
             $rs['email'] = $email;
             $rs['nctrlrfc'] = $nctrlrfc;
-            $sql_update = $this->db->GetUpdateSQL($record,$rs);
-            $this->get_error($this->db->Execute($sql_update),'Error al actualizar');
-        }else{
+            $sql_update = $this->db->GetUpdateSQL($record, $rs);
+            $this->get_error($this->db->Execute($sql_update), 'Error al actualizar');
+        } else {
             die('OJO ');
         }
     }
-           
-    }
+
+}
 ?>
 

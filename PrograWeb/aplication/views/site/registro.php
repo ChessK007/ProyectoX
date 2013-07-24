@@ -1,6 +1,6 @@
 
 <?php
-    include ('../../models/ManejoBaseDatos.php');
+    include ('../../models/Modelo.php');
     include ('../../models/actualiza_usuario.php');
     include ('../../libs/adodb5/adodb-pager.inc.php');
     include ('../../libs/adodb5/adodb.inc.php');

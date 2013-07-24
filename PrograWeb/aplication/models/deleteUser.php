@@ -1,5 +1,5 @@
 <?php
-  class deleteUser extends ManejoBaseDatos{
+  class deleteUser extends Modelo{
       public $nombre_tabla='evt_asistentes';
       public $pk = 'id';
       public $atributos = array(

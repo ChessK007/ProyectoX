@@ -1,6 +1,6 @@
 <?php
 
-class actualiza_usuario extends ManejoBaseDatos {
+class actualiza_usuario extends Modelo {
      public $nombre_tabla = 'evt_asistentes';
      public $pk = 'id';
      public $atributos = array(
@@ -27,7 +27,7 @@ class actualiza_usuario extends ManejoBaseDatos {
     /* Constructor */
 
     public function actualiza_usuario() {
-       parent::ManejoBaseDatos();
+       parent::Modelo();
     }
 
     /* Obtener Valores */

@@ -6,11 +6,11 @@ include ('Validacion.php');
 
 <?php
 
-class ManejoBaseDatos extends Validacion {
+class Modelo extends Validacion {
 
     private $db;
 
-    function ManejoBaseDatos() {
+    function Modelo() {
         parent::Validacion();
         $this->db = ADONewConnection('mysql');
         $this->db->debug = true;
@@ -23,15 +23,9 @@ class ManejoBaseDatos extends Validacion {
         $this->get_error($rs, 'Error en consulta datos');
         return $rs;
     }
-<<<<<<< HEAD
 
-    public function consulta_existencia($sql) {
-        //$sql = 'select id_usuario_detalle from ' . $this->nombre_tabla . ' where email=  ' . $email;
-        $rs = $this->db->Execute($sql);
-        $this->get_error($rs, 'error en la consulta');
-
+   
 //echo "jfjd".$rs[1];
-=======
     
     public function consulta_existencia($sql){
         //$sql = 'select id_usuario_detalle from '. $this->nombre_tabla. ' where email=  '.$email;
@@ -39,7 +33,6 @@ class ManejoBaseDatos extends Validacion {
         $this->get_error($rs,'error en la consulta');
        
         //echo "jfjd".$rs[1];
->>>>>>> 1ab4806d676bf6cb3e97a7035ba81ba85466a4d9
         return $rs;
     }
 

@@ -1,12 +1,12 @@
 <?php
 include('../../views/layouts/header.php');
-include('../../models/ManejoBaseDatos.php');
+include('../../models/Modelo.php');
 include('../../libs/adodb5/adodb.inc.php');
 
-    Class Aceptacion extends ManejoBaseDatos {
+    Class Aceptacion extends Modelo {
         
         public function Aceptacion() {
-        $m= new ManejoBaseDatos();
+        $m= new Modelo();
         if(isset($_POST['email'])){
         $m->resetear_password($_POST['email']);
         $res=$this->db -> Execute($sql_update);

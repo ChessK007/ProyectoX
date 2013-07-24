@@ -1,5 +1,5 @@
 <?php
-  include ('../../../models/ManejoBaseDatos.php');
+  include ('../../../models/Molo.php');
   include ('../../../models/deleteUser.php');
   include ('../../../libs/adodb5/adodb-pager.inc.php');
   include ('../../../libs/adodb5/adodb.inc.php');
@@ -15,15 +15,12 @@
       //echo "Email:".",".$_POST['email'];
       if($deleteUser->borra($_POST['email']))
       {
-<<<<<<< HEAD
           if($deleteUser->borra($_POST['email']))
           {
               echo "Borro con exito";
           }
-=======
           //echo $deleteUser->borra($_POST['email']);
           
->>>>>>> 1ab4806d676bf6cb3e97a7035ba81ba85466a4d9
       }
       else
       {

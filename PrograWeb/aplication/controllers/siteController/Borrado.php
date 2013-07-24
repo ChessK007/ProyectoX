@@ -1,19 +1,19 @@
 <?php
-  class borrado extends ManejoBaseDatos
+  class borrado extends Modelo
   {
       private $borrar;
       
       function borrado()
       {
-          parent::ManejoBaseDatos();
+          parent::Modelo();
       }
       function _construct()
       {
-          $this->ManejoBaseDatos();  
+          $this->Modelo();  
       }
       public function borrado_($email)
       {
-          $borrar= new ManejoBaseDatos();
+          $borrar= new Modelo();
           echo $email;
       }
   }

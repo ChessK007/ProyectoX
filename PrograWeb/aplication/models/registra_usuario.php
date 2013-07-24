@@ -1,6 +1,6 @@
 <?php    
     
-Class Usuario extends ManejoBaseDatos{
+Class Usuario extends Modelo{
     public $nombre_tabla='evt_asistentes';
    
     public $atributos=array(
@@ -26,7 +26,7 @@ Class Usuario extends ManejoBaseDatos{
     private $password;    
     
     function Usuario(){
-        parent::ManejoBaseDatos();
+        parent::Modelo();
     }
     
     public function get_atributos(){
